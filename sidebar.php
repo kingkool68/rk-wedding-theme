@@ -1,0 +1,1 @@
+<div id="sidebar">  <div class="categories">  <h3>Categories</h3>    <ul>      <?php wp_list_categories('sort_column=name&title_li=&orderby=count&order=DESC'); ?>    </ul>  </div></div>
