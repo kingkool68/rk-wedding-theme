@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Russell &amp; Kristina's Wedding | May 29th 2010</title>
-<link rel="shortcut icon" href="<?php echo get_bloginfo('url');?>/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/favicon.ico" type="image/x-icon">
 <?php $template_directory = get_bloginfo('template_directory'); ?>
 <link rel="stylesheet" href="<?php echo $template_directory; ?>/css/reset.css">
 <link rel="stylesheet" href="<?php echo $template_directory; ?>/css/wedding.css">
