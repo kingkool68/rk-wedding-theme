@@ -41,11 +41,12 @@ $wrapper_class = $url[2];
   <?php
    $current_uri = explode('/', $_SERVER['REQUEST_URI']); //Stores the request URI in an array split by / so we can use it later.
    $current_url = get_bloginfo('siteurl') . $_SERVER['REQUEST_URI']; //Creates the current absolute URL
+
    $nav_links = array('Wedding Info' => 'wedding/info/location',
 					 'Our Story' => 'wedding/our-story',
 					 'Wedding Party' => 'wedding/wedding-party',
 					 'Photos' => 'wedding/photos',
-					 'Blog' => get_bloginfo('siteurl')
+					 'Blog' => 'blog',
 					 ); //Build out an array of nav items Link Title => Relative URL
    ?>
   <ul id="nav">
@@ -58,6 +59,15 @@ $wrapper_class = $url[2];
 		}
 		else {
 			  $active_link_class = '';
+		}
+
+		if( $link == 'Blog' ) {
+			$absolute_link_url = $wedding_url . '/';
+			$active_link_class = '';
+			if( is_home() || strstr( $current_url, $link_url ) ) {
+				$active_link_class = ' class="active" ';
+			}
+
 		}
 	?>
     <li<?php echo $active_link_class; ?>><a href="<?php echo $absolute_link_url ?>"><?php echo $link; ?></a></li>
