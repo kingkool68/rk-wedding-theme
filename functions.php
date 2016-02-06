@@ -4,7 +4,7 @@ function custom_comment($comment, $args, $depth) {
 <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
     <div class="meta">
     <cite><?php echo get_comment_author_link(); ?></cite>
-    <?php echo get_avatar($comment,$size='40',$default='<path_to_url>' ); ?>
+    <?php echo get_avatar($comment,$size='40',$default='' ); ?>
     <a class="date" href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><span class="time">
 	<?php echo  get_comment_time(); ?></span> <span class="year"><?php echo get_comment_date(); ?></span></a>
     </div>
