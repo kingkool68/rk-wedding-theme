@@ -19,7 +19,10 @@ $body_class = $url[1];
 if (is_preview() || is_home()) {
 	$body_class = 'blog';
 }
-$wrapper_class = $url[2];
+$wrapper_class = '';
+if ( ! empty( $url[2] ) ) {
+	$wrapper_class = $url[2];
+}
 ?>
 <body class="gri <?php echo $body_class; ?>">
 <div id="header">
@@ -32,7 +35,7 @@ $wrapper_class = $url[2];
   $year  = 2010;   // Year of the countdown
   $hour  = 17;     // Hour of the day (east coast time)
 
-  $calculation = ((mktime ($hour,0,0,$month,$day,$year) - time(void))/3600);
+  $calculation = ((mktime ($hour,0,0,$month,$day,$year) - time())/3600);
   $hours = (int)$calculation;
   $days  = (int)($hours/24);
 
